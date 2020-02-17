@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/dfmattern/Liri-bot/issues"
   },
-  "homepage": "https://github.com/dfmattern/Liri-bot#readme"
+  "homepage": "https://github.com/dfmattern/Liri-bot#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
 }
