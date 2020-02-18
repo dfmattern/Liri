@@ -8,14 +8,26 @@ let axios = require("axios");
 
 let moment = require("moment");
 
-let 
+let fs = require("fs");
+
+let Spotify = require('node-spotify-api');
+
+
 
 //console.log(process.argv);
 
-fucntion concertThis(){
-
+function concertThis(){
+axios
+.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
+.then(function(response){
+    console.log("Venue name:", + response.data);
+    //console.log("Venue location:", + response.data);
+    
+    
+})
 
 };
+concertThis();
 
 function spotifyThis(){
 
