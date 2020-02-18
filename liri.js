@@ -26,14 +26,26 @@ function concertThis() {
         "/events?app_id=codingbootcamp"
     )
     .then(function(response) {
+      console.log("=========Concert Info for: " + artist + " =========");
+
       for (let i = 0; i < response.data.length; i++) {
         let name = response.data[i].venue.name;
         console.log("Venue name: " + response.data[i].venue.name);
+        fs.appendFileSync(
+          "log.txt",
+          "Venue name: " + response.data[i].venue.name
+        );
+
         let city = response.data[i].venue.city;
         console.log("Venue location: " + response.data[i].venue.city);
+        fs.appendFileSync(
+          "log.txt",
+          "Venue location: " + response.data[i].venue.city
+        );
 
         let date = moment(response.data[i].datetime).format("MM/DD/YYYY");
         console.log("Event date:" + date);
+        fs.appendFileSync("log.txt", "Event date: " + date);
       }
     })
     .catch(function(error) {
