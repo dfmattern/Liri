@@ -1,8 +1,14 @@
 require("dotenv").config();
 
-var keys = require("./keys.js");
+let keys = require("./keys.js");
 
-var spotify = new Spotify(keys.spotify);
+let spotify = new Spotify(keys.spotify);
+
+let axios = require("axios");
+
+let moment = require("moment");
+
+let 
 
 //console.log(process.argv);
 
