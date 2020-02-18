@@ -1,1 +1,1 @@
-# Liri-bot
+# Liri
