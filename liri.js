@@ -2,8 +2,6 @@ require("dotenv").config();
 
 var keys = require("./keys.js");
 
-
-
 var axios = require("axios");
 
 var moment = require("moment");
@@ -20,7 +18,7 @@ let command = process.argv[2];
 let userInput = process.argv[3];
 
 function concertThis() {
-  let artist = userInput;
+  //let artist = userInput;
   axios
     .get(
       "https://rest.bandsintown.com/artists/" +
@@ -55,23 +53,45 @@ function concertThis() {
     });
 }
 //concertThis();
+let artistName = function(artist) {
+  return artist.name;
+};
 
 function spotifyThis() {
   let songTitle = userInput;
-  if (!songTitle){
-      songTitle = "I Want It That Way";
+  if (songTitle === undefined) {
+    songTitle = "I Want It That Way";
   }
-  
-  
+
+  spotify.search(
+    {
+      type: "track",
+      query: songTitle
+    },
+    function(err, data) {
+      if (err) {
+        console.log("Error occurred: " + err);
+        return;
+      }
+      //console.log(data.tracks.items);
+      info = data.tracks.items;
+      for (let i = 0; i < info.length; i++) {
+        console.log("Artist(s): " + info[i].artists.map(artistName));
+        fs.appendFileSync(
+          "log.txt",
+          "Artist(s): " + info[i].artists.map(artistName)
+        );
+
+        console.log("Song name: " + info[i].name);
+        fs.appendFileSync("log.txt", "Song name: " + info[i].name);
+
+        //console.log("Preview song: " + info[i].preview_url);
+      }
+    }
+  );
 }
 spotifyThis();
 
 function movieThis() {}
 
-function dwis() {
-  fs.readFile("random.txt", "utf8", function(error, data) {
-    let txt = data.split(",");
-
-    spotifyThis(txt[1]);
-  });
-}
+function doWhatItSays() {}
