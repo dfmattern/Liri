@@ -1,16 +1,18 @@
 require("dotenv").config();
 
-let keys = require("./keys.js");
+var keys = require("./keys.js");
 
-//let spotify = new Spotify(keys.spotify);
 
-let axios = require("axios");
 
-let moment = require("moment");
+var axios = require("axios");
 
-let fs = require("fs");
+var moment = require("moment");
 
-//let Spotify = require("node-spotify-api");
+var fs = require("fs");
+
+var Spotify = require("node-spotify-api");
+
+var spotify = new Spotify(keys.spotify);
 
 //console.log(process.argv);
 
@@ -52,9 +54,17 @@ function concertThis() {
       console.log(error);
     });
 }
-concertThis();
+//concertThis();
 
-function spotifyThis() {}
+function spotifyThis() {
+  let songTitle = userInput;
+  if (!songTitle){
+      songTitle = "I Want It That Way";
+  }
+  
+  
+}
+spotifyThis();
 
 function movieThis() {}
 
