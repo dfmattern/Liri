@@ -36,7 +36,7 @@ do-what-it-says
 	
 ###Concert This Screenshot
 	
-![Concert This](https://raw.github.com/dfmattern/Liri/master/screenshot/concert this.PNG)
+![Concert This](https://github.com/dfmattern/Liri/blob/master/screenshot/concert%20this.PNG)
 
 * Step Two: node liri spotify-this-song ```<song name here>```.
 	
