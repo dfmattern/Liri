@@ -34,7 +34,7 @@ do-what-it-says
 	*Venue location
 	*Date of the Event (use moment to format this as "MM/DD/YYYY")
 	
-###Concert This Screenshot
+### Concert This Screenshot
 	
 ![Concert This](https://github.com/dfmattern/Liri/blob/master/screenshot/concert%20this.PNG)
 
@@ -47,7 +47,11 @@ do-what-it-says
 	* The album that the song is from
 
 	If no song is provided then the program will default to
-	"THe Sign" by Ace of Bass
+	"The Sign" by Ace of BassSpot
+	
+### Spotify This Screenshot
+
+![Spotify This](
 
 * Step Three: node liri.js movie-this ```<movie name here>```.
 	
@@ -62,6 +66,10 @@ do-what-it-says
  	 * Actors in the movie.
 	
 	If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody'
+	
+### Movie This Screenshot
+
+![Movie This](
 
 * Step Four: node liri.js do-what-it-says
 
