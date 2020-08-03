@@ -51,7 +51,7 @@ do-what-it-says
 	
 ### Spotify This Screenshot
 
-![Spotify This](
+![Spotify This](https://github.com/dfmattern/Liri/blob/master/screenshot/spotify.PNG)
 
 * Step Three: node liri.js movie-this ```<movie name here>```.
 	
