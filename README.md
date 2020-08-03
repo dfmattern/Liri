@@ -34,7 +34,9 @@ do-what-it-says
 	*Venue location
 	*Date of the Event (use moment to format this as "MM/DD/YYYY")
 	
-![Concert This](https://raw.github.com/dfmattern/Liri/master/screenshot/concert this.png)
+###Concert This Screenshot
+	
+![Concert This](https://raw.github.com/dfmattern/Liri/master/screenshot/concert this.PNG)
 
 * Step Two: node liri spotify-this-song ```<song name here>```.
 	
