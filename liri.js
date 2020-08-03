@@ -14,14 +14,14 @@ var spotify = new Spotify(keys.spotify);
 
 //console.log(process.argv);
 
-let command = process.argv[2];
-let userInput = process.argv[3];
+var command = process.argv[2];
+var userInput = process.argv[3];
 
 
 
-
+//Bands in Town-concert this
 function concertThis() {
-  //let artist = userInput;
+  var artist = userInput;
   axios
     .get(
       "https://rest.bandsintown.com/artists/" +
@@ -55,14 +55,39 @@ function concertThis() {
       console.log(error);
     });
 }
-concertThis();
-node 
-let artistName = function(artist) {
+//concertThis();
+
+function mySwitch(command){
+
+  switch(command){
+
+case "concert-this":
+  concertThis();
+  break;
+
+  case "spotify-this-song":
+    spotifyThis();
+    break;
+
+    case "movie-this":
+      movieThis();
+      break
+
+      case "do-what-it-says":
+        doWhatItSays();
+        break;
+
+  }
+
+
+var artistName = function(artist) {
   return artist.name;
 };
 
+
+//Spotify-spotify-this-song
 function spotifyThis() {
-  //let songTitle = userInput;
+  var songTitle = userInput;
   if (songTitle === undefined) {
     songTitle = "I Want It That Way";
   }
@@ -79,7 +104,7 @@ function spotifyThis() {
       }
       //console.log(data.tracks.items);
       info = data.tracks.items;
-      for (let i = 0; i < info.length; i++) {
+      for (var i = 0; i < info.length; i++) {
         console.log("Artist(s): " + info[i].artists.map(artistName));
         fs.appendFileSync(
           "log.txt",
@@ -104,8 +129,9 @@ function spotifyThis() {
     }
   );
 }
-spotifyThis();
+//spotifyThis();
 
+//OMDB-movie-this
 function movieThis() {
   let movieName = userInput;
   axios
@@ -139,10 +165,17 @@ function movieThis() {
       
     })
 }
-movieThis();
+//movieThis();
 
+//Read File-do-what-it-says
 function doWhatItSays() {
-  
-
+  fs.readFile("random.txt", "utf8", function (error, data) {
+    if (!error);
+    console.log(data.toString());
+    var cmds = data.toString().split(',');
+  });
 }
 //doWhatItSays();
+}
+
+mySwitch(command);
