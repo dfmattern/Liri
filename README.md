@@ -69,7 +69,7 @@ do-what-it-says
 	
 ### Movie This Screenshot
 
-![Movie This](
+![Movie This](https://github.com/dfmattern/Liri/blob/master/screenshot/movie%20this.PNG)
 
 * Step Four: node liri.js do-what-it-says
 
